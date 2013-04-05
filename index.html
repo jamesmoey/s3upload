@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>S3 Upload Test</title>
+    <script type="text/javascript" src="lib/q.js"></script>
+    <script type="text/javascript" src="lib/ext-core-debug.js"></script>
+    <script type="text/javascript" src="s3upload.js"></script>
+</head>
+<body>
+<h1>CORS Large File Multi Part Upload</h1>
+<input type="file" name="largefile" id="largefile">
+<button onclick="upload.submit()">Upload</button>
+</body>
+<script type="text/javascript">
+    S3.configure({
+        s3Bucket: 's3upload.tradingpursuits'
+    });
+    var upload = S3.injectUpload('largefile');
+</script>
+</html>
